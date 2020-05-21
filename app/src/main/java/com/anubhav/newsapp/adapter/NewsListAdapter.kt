@@ -36,7 +36,7 @@ class NewsListAdapter(var context: Context, var newsList: ArrayList<NewsData>) :
             binding.setVariable(BR.news, data)
             binding.executePendingBindings()
 
-            binding.clRoot.setOnClickListener {
+            binding.layoutRoot.setOnClickListener {
                 onItemClick.invoke(binding.news?.url.toString())
             }
         }

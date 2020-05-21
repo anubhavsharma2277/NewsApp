@@ -14,26 +14,27 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_root"
+        android:id="@+id/layoutRoot"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_source"
+            android:id="@+id/textViewSource"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_16dp"
             android:text="@{news.source.name}"
             android:textAllCaps="true"
+            android:textColor="#000"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/iv_news"
+            android:id="@+id/imageViewNews"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_margin="@dimen/margin_16dp"
-            android:scaleType="centerCrop"
+            android:scaleType="fitXY"
             app:imageUrlCache="@{news.url_to_image}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -41,38 +42,35 @@
             app:placeholder="@{Constants.PLACEHOLDER_TRANSPARENT_IMAGE}" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_head"
+            android:id="@+id/textViewHead"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_16dp"
-            android:layout_marginTop="@dimen/margin_8dp"
-            android:layout_marginEnd="@dimen/margin_8dp"
+            android:layout_marginTop="@dimen/margin_5dp"
+            android:layout_marginEnd="5dp"
             android:ellipsize="end"
             android:maxLines="3"
             android:text="@{news.title}"
-            android:textColor="#000000"
-            android:textSize="@dimen/text_20sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/iv_news"
+            android:textSize="@dimen/text_16sp"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewNews"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_source" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewSource" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_author"
+            android:id="@+id/textViewAuthor"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_16dp"
-            android:layout_marginTop="@dimen/margin_8dp"
+            android:layout_marginTop="@dimen/margin_5dp"
             android:text="@{news.author}"
             android:textAllCaps="true"
-            android:textColor="#000000"
-            app:layout_constraintEnd_toStartOf="@+id/iv_news"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewNews"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_head" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewHead" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_date"
+            android:id="@+id/textViewDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_4dp"
@@ -80,8 +78,9 @@
             android:paddingBottom="@dimen/margin_16dp"
             android:text="@{String.valueOf(news.published_at).replace('T',' ').replace('Z',' ')}"
             android:textAllCaps="true"
+            android:textColor="#000"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_author" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewAuthor" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

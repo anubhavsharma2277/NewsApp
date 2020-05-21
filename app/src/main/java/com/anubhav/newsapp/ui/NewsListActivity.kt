@@ -34,7 +34,7 @@ class NewsListActivity : BaseActivity<ActivityMainBinding>() {
     }
     // setting adapter
     private fun setAdapter(newsList: ArrayList<NewsData>) {
-        binding.rvNews.apply {
+        binding.recyclerViewNews.apply {
             layoutManager = LinearLayoutManager(this@NewsListActivity)
             adapter = NewsListAdapter(this@NewsListActivity, newsList)
             addItemDecoration(
